@@ -7,7 +7,7 @@ export default function ProjectDetailsComponent({projectName, projectTags, proje
 
     return (
         <Stack direction="column" spacing={1}>
-            <Grid container spacing={1} justifyContent={'space-between'}>
+            <Grid container spacing={0} justifyContent={'space-between'}>
                 <Grid size={{xs: 12, md: 6}} order={1}>
                     <Typography sx={{fontWeight: 'bold'}} color="textPrimary" variant="h4">
                         {projectName}

@@ -6,7 +6,7 @@ export default function NameComponent() {
 
     return (
         <>
-            <Stack direction={{xs: 'column', sm: 'row'}} spacing={1}>
+            <Stack direction={{xs: 'column', sm: 'row'}} spacing={{xs: 0, sm: 1}}>
                 <Typography sx={{fontWeight: 'bold'}} color="textPrimary" variant="h2" component="span">
                     CHARLIE
                 </Typography>

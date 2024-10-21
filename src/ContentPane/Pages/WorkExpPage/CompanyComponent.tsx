@@ -17,14 +17,14 @@ export default function CompanyComponent({
                 {
                     workDescription.map((work) => {
                         return (<>
-                                <Grid container spacing={1} justifyContent={'space-between'}>
+                                <Grid container spacing={0} justifyContent={'space-between'}>
                                     <Grid size={{xs: 12, md: 6}}>
                                         <Typography sx={{fontWeight: 'bold', ml: 2}} color="textSecondary" variant="h5">
                                             {work['title']}
                                         </Typography>
                                     </Grid>
                                     <Grid size={{xs: 12, md: 'auto'}}>
-                                        <Typography color="primary" variant="h6" gutterBottom>
+                                        <Typography color="primary" variant="h6" sx={{ml: 2}} gutterBottom>
                                             {work['duration']}
                                         </Typography>
                                     </Grid>

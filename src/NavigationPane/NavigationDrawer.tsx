@@ -11,22 +11,84 @@ import SchoolIcon from "@mui/icons-material/School";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import * as React from "react";
 import AvatarPhoto from "./AvatarPhoto.tsx";
+import {useEffect} from "react";
 
 export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawerToggle}) {
-    const drawerWidth = 240;
+    const drawerWidth = 256;
+    const sections = ['about-section', 'workex-section', 'education-section', 'projects-section'];
+    const [selectedIndex, setSelectedIndex] = React.useState(0);
 
-    function goToSection(sectionId: string) {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const index = sections.findIndex((section) => section === entry.target.id);
+                        setSelectedIndex(index);
+                    }
+                });
+            },
+            {
+                root: null,
+                threshold: 0.6,
+            }
+        );
+        sections.forEach((section) => {
+            const element = document.getElementById(section);
+            if (element) {
+                observer.observe(element);
+            }
+        });
+        return () => {
+            sections.forEach((section) => {
+                const element = document.getElementById(section);
+                if (element) {
+                    observer.unobserve(element);
+                }
+            });
+        };
+    }, []);
+
+    const CustomListItem = ({index, icon, title, onClick}) => {
+        return (
+            <ListItem disablePadding disableGutters>
+                <ListItemButton
+                    selected={selectedIndex === index}
+                    sx={{
+                        bgcolor: selectedIndex === index ? 'rgba(255, 255, 255, 0.2)' : 'inherit',
+                        '&.Mui-selected': {
+                            bgcolor: 'rgba(255, 255, 255, 0.2)',
+                            '&:hover': {
+                                bgcolor: 'rgba(255, 255, 255, 0.3)',
+                            },
+                        },
+                    }}
+                    onClick={onClick}>
+                    <ListItemIcon sx={{color: 'white'}}>
+                        {icon}
+                    </ListItemIcon>
+                    <ListItemText primary={title}/>
+                </ListItemButton>
+            </ListItem>
+        );
+    }
+
+
+    function goToSection(sectionId: string, index) {
         const section = document.getElementById(sectionId);
         if (section) {
-            section.scrollIntoView({
+            const offset = isMd ? -30 : 30;
+            const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+            window.scrollTo({
+                top: sectionTop - offset,
                 behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest',
             });
         }
         if (isMobileDrawerOpen) {
             handleDrawerToggle();
         }
+        setSelectedIndex(index);
     }
 
     return (
@@ -43,6 +105,7 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
             <Container sx={{
                 height: '100%',
                 bgcolor: 'primary.main',
+                // bgcolor: 'background.paper',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: isMd ? 'center' : 'start',
@@ -56,46 +119,38 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
                         border={'9px solid rgba(255, 255, 255, .4)'}
                     />}
                 <List sx={{color: 'white', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
-                    <ListItem disablePadding>
-                        <ListItemButton onClick={() => {
-                            goToSection('about-section')
-                        }}>
-                            <ListItemIcon>
-                                <InfoIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={'ABOUT'}/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton onClick={() => {
-                            goToSection('workex-section')
-                        }}>
-                            <ListItemIcon>
-                                <BusinessCenterIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={'WORK EXPERIENCE'}/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton onClick={() => {
-                            goToSection('education-section')
-                        }}>
-                            <ListItemIcon>
-                                <SchoolIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={'EDUCATION'}/>
-                        </ListItemButton>
-                    </ListItem>
-                    <ListItem disablePadding>
-                        <ListItemButton onClick={() => {
-                            goToSection('projects-section')
-                        }}>
-                            <ListItemIcon>
-                                <TerminalIcon/>
-                            </ListItemIcon>
-                            <ListItemText primary={'PROJECTS'}/>
-                        </ListItemButton>
-                    </ListItem>
+                    <CustomListItem
+                        index={0}
+                        title={'ABOUT'}
+                        icon={<InfoIcon/>}
+                        onClick={() => {
+                            goToSection('about-section', 0)
+                        }}
+                    />
+                    <CustomListItem
+                        index={1}
+                        title={'WORK EXPERIENCE'}
+                        icon={<BusinessCenterIcon/>}
+                        onClick={() => {
+                            goToSection('workex-section', 1)
+                        }}
+                    />
+                    <CustomListItem
+                        index={2}
+                        title={'EDUCATION'}
+                        icon={<SchoolIcon/>}
+                        onClick={() => {
+                            goToSection('education-section', 2)
+                        }}
+                    />
+                    <CustomListItem
+                        index={3}
+                        title={'PROJECTS'}
+                        icon={<TerminalIcon/>}
+                        onClick={() => {
+                            goToSection('projects-section', 3)
+                        }}
+                    />
                 </List>
             </Container>
         </Drawer>
