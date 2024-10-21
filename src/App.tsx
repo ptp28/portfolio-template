@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import NavigationPane from "./NavigationPane.tsx";
-import ContentPane from "./ContentPane.tsx";
+import NavigationPane from "./NavigationPane/NavigationPane.tsx";
+import ContentPane from "./ContentPane/ContentPane.tsx";
 import {useEffect, useState} from "react";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 

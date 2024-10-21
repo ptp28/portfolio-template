@@ -1,15 +1,15 @@
 import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import * as React from "react";
-import AboutPage from "./AboutPage.tsx";
-import EducationPage from "./EducationPage.tsx";
+import AboutPage from "./Pages/AboutPage/AboutPage.tsx";
+import EducationPage from "./Pages/EducationPage/EducationPage.tsx";
 import Divider from "@mui/material/Divider";
-import ProjectsPage from "./ProjectsPage.tsx";
-import WorkExpPage from "./WorkExpPage.tsx";
+import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage.tsx";
+import WorkExpPage from "./Pages/WorkExpPage/WorkExpPage.tsx";
 
 export default function ContentPane() {
 
-    const PageContainer = ({children, id }) => {
+    const PageContainer = ({children, id}) => {
         return (
             <>
                 <section id={id} style={{minHeight: '100vh'}}>
