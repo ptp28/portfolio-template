@@ -5,6 +5,7 @@ import AboutPage from "./AboutPage.tsx";
 import EducationPage from "./EducationPage.tsx";
 import Divider from "@mui/material/Divider";
 import ProjectsPage from "./ProjectsPage.tsx";
+import WorkExpPage from "./WorkExpPage.tsx";
 
 export default function ContentPane() {
 
@@ -15,15 +16,18 @@ export default function ContentPane() {
                     <Toolbar/>
                     {children}
                 </section>
-                <Divider/>
+                <Divider sx={{mt: 5}}/>
             </>
         );
     };
 
     return (
-        <Box component="main" sx={{flexGrow: 1, p: 3}}>
+        <Box component="main" sx={{flexGrow: 1, p: 3, width: '100%'}}>
             <PageContainer id={'about-section'}>
                 <AboutPage/>
+            </PageContainer>
+            <PageContainer id={'workex-section'}>
+                <WorkExpPage/>
             </PageContainer>
             <PageContainer id={'education-section'}>
                 <EducationPage/>

@@ -10,7 +10,7 @@ import InfoIcon from '@mui/icons-material/Info';
 import SchoolIcon from '@mui/icons-material/School';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import ListItemText from "@mui/material/ListItemText";
-import Divider from "@mui/material/Divider";
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import * as React from "react";
 import {Avatar, Container, IconButton, useMediaQuery, useTheme} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
@@ -93,15 +93,28 @@ export default function NavigationPane() {
                     {isMd && <Avatar
                         alt="Remy Sharp"
                         src={'avatar.png'}
-                        sx={{width: 165, height: 165, mt: 2, mb: 2}}
+                        sx={{
+                            width: 187,
+                            height: 187,
+                            m: 2,
+                            border: '10px solid rgba(255, 255, 255, .4)'
+                    }}
                     />}
-                    <List sx={{color: 'white', justifyContent: 'center', alignItems: 'center'}}>
+                    <List sx={{color: 'white', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
                         <ListItem disablePadding>
                             <ListItemButton onClick={() => {goToSection('about-section')}}>
                                 <ListItemIcon>
                                     <InfoIcon />
                                 </ListItemIcon>
                                 <ListItemText primary={'ABOUT'}/>
+                            </ListItemButton>
+                        </ListItem>
+                        <ListItem disablePadding>
+                            <ListItemButton onClick={() => {goToSection('workex-section')}}>
+                                <ListItemIcon>
+                                    <BusinessCenterIcon/>
+                                </ListItemIcon>
+                                <ListItemText primary={'WORK EXPERIENCE'}/>
                             </ListItemButton>
                         </ListItem>
                         <ListItem disablePadding>

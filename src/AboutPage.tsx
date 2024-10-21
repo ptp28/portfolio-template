@@ -24,13 +24,14 @@ export default function AboutPage(props) {
 
     return (
         <Box sx={{...props.sx}}>
-            <Typography sx={{fontWeight: 'bold'}} color="textPrimary" variant="h2" component="span">
-                CHARLIE
-            </Typography>
-            &nbsp;
-            <Typography sx={{fontWeight: 'bold'}} color="primary" variant="h2" component="span">
-                BROWN
-            </Typography>
+            <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1}>
+                <Typography sx={{fontWeight: 'bold'}} color="textPrimary" variant="h2" component="span">
+                    CHARLIE
+                </Typography>
+                <Typography sx={{fontWeight: 'bold'}} color="primary" variant="h2" component="span">
+                    BROWN
+                </Typography>
+            </Stack>
             <Typography color="textSecondary" variant="h5">
                 charlie.brown@email.com
             </Typography>
@@ -75,7 +76,6 @@ export default function AboutPage(props) {
                     <FaxIcon sx={{fontSize: 30}}/>
                 </CircularButton>
             </Stack>
-
         </Box>
     )
 }
