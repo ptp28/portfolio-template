@@ -9,7 +9,7 @@ import ProjectDetailsComponent from "./ProjectDetailsComponent.tsx";
 export default function ProjectsPage(props) {
     return (
         <Box sx={{...props.sx}}>
-            <Typography sx={{fontWeight: 'bold', mb: 5}} color="primary" variant="h3">
+            <Typography sx={{mb: 5}} color="primary" variant="h3">
                 <TerminalIcon sx={{fontSize: 30}}/> PROJECTS
             </Typography>
 

@@ -11,7 +11,7 @@ export default function CompanyComponent({
     return (
         <>
             <Stack direction="column" spacing={1}>
-                <Typography sx={{fontWeight: 'bold'}} color="textPrimary" variant="h4">
+                <Typography color="textPrimary" variant="h3">
                     {companyName}
                 </Typography>
                 {
@@ -19,12 +19,12 @@ export default function CompanyComponent({
                         return (<>
                                 <Grid container spacing={0} justifyContent={'space-between'}>
                                     <Grid size={{xs: 12, md: 6}}>
-                                        <Typography sx={{fontWeight: 'bold', ml: 2}} color="textSecondary" variant="h5">
+                                        <Typography sx={{ml: 2}} color="textSecondary" variant="h4">
                                             {work['title']}
                                         </Typography>
                                     </Grid>
                                     <Grid size={{xs: 12, md: 'auto'}}>
-                                        <Typography color="primary" variant="h6" sx={{ml: 2}} gutterBottom>
+                                        <Typography color="primary" fontFamily={'Mulish'} variant="h6" sx={{ml: 2}} gutterBottom>
                                             {work['duration']}
                                         </Typography>
                                     </Grid>

@@ -9,7 +9,7 @@ import EducationHistory from "./EducationHistory.tsx";
 export default function EducationPage(props) {
     return (
         <Box sx={{...props.sx}}>
-            <Typography sx={{fontWeight: 'bold', mb: 5}} color="primary" variant="h3">
+            <Typography sx={{mb: 5}} color="primary" variant="h3">
                 <SchoolIcon sx={{fontSize: 30}}/> EDUCATION
             </Typography>
 

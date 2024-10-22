@@ -9,7 +9,7 @@ import CompanyComponent from "./CompanyComponent.tsx";
 export default function WorkExpPage(props) {
     return (
         <Box sx={{...props.sx}}>
-            <Typography sx={{fontWeight: 'bold', mb: 5}} color="primary" variant="h3">
+            <Typography sx={{mb: 5}} color="primary" variant="h3">
                 <BusinessCenterIcon sx={{fontSize: 30}}/> WORK EXPERIENCE
             </Typography>
 

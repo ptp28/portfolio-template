@@ -54,20 +54,19 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
             <ListItem disablePadding disableGutters>
                 <ListItemButton
                     selected={selectedIndex === index}
-                    sx={{
-                        bgcolor: selectedIndex === index ? 'rgba(255, 255, 255, 0.2)' : 'inherit',
-                        '&.Mui-selected': {
-                            bgcolor: 'rgba(255, 255, 255, 0.2)',
-                            '&:hover': {
-                                bgcolor: 'rgba(255, 255, 255, 0.3)',
-                            },
-                        },
-                    }}
                     onClick={onClick}>
-                    <ListItemIcon sx={{color: 'white'}}>
+                    <ListItemIcon
+                        sx={{color: selectedIndex === index ? 'rgba(255,255,255, 1)' : 'rgba(255,255,255,0.5)'}}
+                    >
                         {icon}
                     </ListItemIcon>
-                    <ListItemText primary={title}/>
+                    <ListItemText
+                        primary={title}
+                        primaryTypographyProps={{
+                            fontWeight: selectedIndex === index ? '800' : '600',
+                            color: selectedIndex === index ? 'rgba(255,255,255, 1)' : 'rgba(255,255,255,0.5)',
+                        }}
+                    />
                 </ListItemButton>
             </ListItem>
         );

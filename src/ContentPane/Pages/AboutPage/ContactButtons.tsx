@@ -24,8 +24,8 @@ export default function ContactButtons() {
 
     return (
         <>
-            <Typography sx={{fontWeight: 'bold', mt: 7, mb: 2}} color="textSecondary" variant="h5">
-                GET IN TOUCH:
+            <Typography sx={{mt: 7, mb: 2}} color="secondary" variant="h4">
+                GET IN TOUCH
             </Typography>
             <Stack direction="row" spacing={4}>
                 <CircularButton
