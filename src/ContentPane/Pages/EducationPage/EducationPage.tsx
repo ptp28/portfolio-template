@@ -19,9 +19,11 @@ export default function EducationPage(props) {
                     instituteName={'Harvard University'}
                     degree={'Master of Science in Computer Science'}
                     studyDuration={'September 2022 - Present'}
-                    description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id donec ultrices.'}
+                    description={"<b>Subjects -</b> <br/>" +
+                        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." +
+                        "<br/><b>Honors - </b><br/>" +
+                        "Order of the Crimon, Distinction"}
                     grade={'4.0/4.0 GPA'}
-                    honors={'Order of the Crimson, Distinction'}
                 />
 
                 <EducationHistory
@@ -30,7 +32,6 @@ export default function EducationPage(props) {
                     studyDuration={'July 2016 - August 2020'}
                     description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id donec ultrices.'}
                     grade={'3.8/4.0 GPA'}
-                    honors={''}
                 />
             </Stack>
         </Box>

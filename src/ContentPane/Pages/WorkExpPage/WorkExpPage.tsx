@@ -23,7 +23,7 @@ export default function WorkExpPage(props) {
                                 "title": "Sr. Software Engineer",
                                 "duration": "September 2022 - December 2024",
                                 "description": [
-                                    "This is the first bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
+                                    "This is the <b>first</b> bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
                                     "This is the second bullet point paragraph. It contains some example text describing a specific topic or idea.",
                                     "This is the third bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
                                 ],

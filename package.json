@@ -16,6 +16,7 @@
     "@fontsource/saira-extra-condensed": "^5.1.0",
     "@mui/icons-material": "^6.1.4",
     "@mui/material": "^6.1.4",
+    "dompurify": "^3.1.7",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

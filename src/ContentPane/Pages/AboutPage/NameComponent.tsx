@@ -1,4 +1,4 @@
-import {Stack} from "@mui/material";
+import {Link, Stack} from "@mui/material";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
 
@@ -16,7 +16,8 @@ export default function NameComponent() {
                 </Typography>
             </Stack>
             <Typography color="textSecondary" variant="h4">
-                charlie.brown@email.com
+                <Link color="textSecondary" sx={{textDecoration: 'none'}}
+                      href={'mailto:charlie.brown@email.com'}>charlie.brown@email.com</Link>
             </Typography>
         </>
     );

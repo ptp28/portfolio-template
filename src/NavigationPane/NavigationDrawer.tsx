@@ -12,10 +12,11 @@ import TerminalIcon from "@mui/icons-material/Terminal";
 import * as React from "react";
 import AvatarPhoto from "./AvatarPhoto.tsx";
 import {useEffect} from "react";
+import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
 export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawerToggle}) {
     const drawerWidth = 256;
-    const sections = ['about-section', 'workex-section', 'education-section', 'projects-section'];
+    const sections = ['about-section', 'workex-section', 'education-section', 'projects-section', 'publications-section'];
     const [selectedIndex, setSelectedIndex] = React.useState(0);
 
     useEffect(() => {
@@ -148,6 +149,14 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
                         icon={<TerminalIcon/>}
                         onClick={() => {
                             goToSection('projects-section', 3)
+                        }}
+                    />
+                    <CustomListItem
+                        index={4}
+                        title={'PUBLICATIONS'}
+                        icon={<CollectionsBookmarkIcon/>}
+                        onClick={() => {
+                            goToSection('publications-section', 4)
                         }}
                     />
                 </List>

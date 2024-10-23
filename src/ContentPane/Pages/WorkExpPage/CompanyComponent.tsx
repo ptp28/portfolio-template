@@ -2,6 +2,7 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid2";
 import {Stack} from "@mui/material";
 import * as React from "react";
+import DOMPurify from 'dompurify';
 
 export default function CompanyComponent({
                                              companyName,
@@ -24,18 +25,17 @@ export default function CompanyComponent({
                                         </Typography>
                                     </Grid>
                                     <Grid size={{xs: 12, md: 'auto'}}>
-                                        <Typography color="primary" fontFamily={'Mulish'} variant="h6" sx={{ml: 2}} gutterBottom>
+                                        <Typography color="primary" fontFamily={'Mulish'} variant="h6" sx={{ml: 2}}
+                                                    gutterBottom>
                                             {work['duration']}
                                         </Typography>
                                     </Grid>
                                 </Grid>
-                                <Typography>
+                                <Typography sx={{pr: {sm: 0, md: 10}}}>
                                     <ul>
                                         {work['description'].map((description) => {
                                             return (
-                                                <li>
-                                                    {description}
-                                                </li>
+                                                <li dangerouslySetInnerHTML={{ __html: description }} />
                                             )
                                         })}
                                     </ul>

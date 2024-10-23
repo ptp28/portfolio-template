@@ -2,9 +2,12 @@ import Grid from "@mui/material/Grid2";
 import Typography from "@mui/material/Typography";
 import {Stack} from "@mui/material";
 import * as React from "react";
+import DOMPurify from 'dompurify';
 
-export default function EducationHistory({instituteName, degree, studyDuration, description, grade, honors}) {
 
+export default function EducationHistory({instituteName, degree, studyDuration, description, grade}) {
+
+    description = DOMPurify.sanitize(description);
     return (
         <>
             <Stack direction="column" spacing={1}>
@@ -25,18 +28,17 @@ export default function EducationHistory({instituteName, degree, studyDuration, 
                         </Typography>
                     </Grid>
                 </Grid>
+                <Stack spacing={2} sx={{pr: {sm: 0, md: 10}}}>
+                    <Typography dangerouslySetInnerHTML={{ __html: description }} />
+                    <Typography>
+                        {grade && 'Grade - ' + grade}
+                    </Typography>
+                </Stack>
 
-                <Typography sx={{mt: 2}}>
-                    {description}
-                </Typography>
 
-                <Typography sx={{mt: 2}}>
-                    {grade && 'Grade - ' + grade}
-                </Typography>
 
-                <Typography sx={{mt: 2}}>
-                    {honors && 'Honors - ' + honors}
-                </Typography>
+
+
             </Stack>
         </>
     );

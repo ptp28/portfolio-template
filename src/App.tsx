@@ -9,36 +9,37 @@ import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
 const fontFamilyTitles = 'Saira Extra Condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
 const fontFamilyOther = 'Mulish, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
 const typography = {
-        h1: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 700,
-        },
-        h2: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 700,
-        },
-        h3: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 700,
-        },
-        h4: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 600,
-        },
-        h5: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 600,
-        },
-        h6: {
-            fontFamily: fontFamilyTitles,
-            fontWeight: 600,
-        },
-        fontFamily: fontFamilyOther,
-        fontWeight: 400,
-    };
+    fontFamily: fontFamilyOther,
+    fontWeightRegular: 500,
+    fontSize: 15,
+    h1: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 700,
+    },
+    h2: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 700,
+    },
+    h3: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 700,
+    },
+    h4: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 600,
+    },
+    h5: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 600,
+    },
+    h6: {
+        fontFamily: fontFamilyTitles,
+        fontWeight: 600,
+    }
+};
 
 const lightTheme = createTheme({
-    typography : typography,
+    typography: typography,
     palette: {
         mode: 'light',
         primary: {
@@ -52,7 +53,7 @@ const lightTheme = createTheme({
 
 
 const darkTheme = createTheme({
-    typography : typography,
+    typography: typography,
     palette: {
         mode: 'dark',
         primary: {
