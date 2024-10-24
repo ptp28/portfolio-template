@@ -4,7 +4,6 @@ import NavigationPane from "./NavigationPane/NavigationPane.tsx";
 import ContentPane from "./ContentPane/ContentPane.tsx";
 import {useEffect, useState} from "react";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
-import userData from '../profile-sample.json';
 
 
 const fontFamilyTitles = 'Saira Extra Condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
@@ -44,7 +43,7 @@ const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: userData['Theme']['primaryColor'] || '#BD5D38',
+            main: '#BD5D38',
         },
         secondary: {
             main: '#2f2f2f',
@@ -58,7 +57,7 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: userData['Theme']['primaryColor'] || '#BD5D38',
+            main: '#BD5D38',
         },
         secondary: {
             main: '#e2e2e2',
@@ -69,6 +68,15 @@ const darkTheme = createTheme({
 
 function App() {
     const [theme, setTheme] = useState(lightTheme);
+
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        fetch('./user-data.json')
+            .then((response) => response.json())
+            .then((data) => setUserData(data))
+            .catch((error) => console.error('Error fetching JSON:', error));
+    }, []);
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
@@ -81,6 +89,14 @@ function App() {
             mediaQuery.removeEventListener('change', handleChange);
         };
     }, []);
+
+    if(!userData) {
+        return <></>;
+    }
+
+    if(userData['Theme']['primaryColor']) {
+        theme.palette.primary.main = userData['Theme']['primaryColor'];
+    }
 
     return (
         <ThemeProvider theme={theme}>
