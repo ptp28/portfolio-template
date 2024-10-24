@@ -10,11 +10,17 @@ import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 import SchoolIcon from "@mui/icons-material/School";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import * as React from "react";
-import AvatarPhoto from "./AvatarPhoto.tsx";
 import {useEffect} from "react";
 import CollectionsBookmarkIcon from "@mui/icons-material/CollectionsBookmark";
 
-export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawerToggle}) {
+interface NavigationDrawerProps {
+    AvatarPhotoComponent: React.ReactElement;
+    isMd: boolean;
+    isMobileDrawerOpen: boolean;
+    handleDrawerToggle: () => void;
+}
+
+export default function NavigationDrawer(props: NavigationDrawerProps) {
     const drawerWidth = 256;
     const sections = ['about-section', 'workex-section', 'education-section', 'projects-section', 'publications-section'];
     const [selectedIndex, setSelectedIndex] = React.useState(0);
@@ -50,7 +56,12 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
         };
     }, []);
 
-    const CustomListItem = ({index, icon, title, onClick}) => {
+    const CustomListItem = ({index, icon, title, onClick}: {
+        index: number,
+        icon: React.ReactElement,
+        title: string,
+        onClick: () => void
+    }) => {
         return (
             <ListItem disablePadding disableGutters>
                 <ListItemButton
@@ -74,10 +85,10 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
     }
 
 
-    function goToSection(sectionId: string, index) {
+    function goToSection(sectionId: string, index: number) {
         const section = document.getElementById(sectionId);
         if (section) {
-            const offset = isMd ? -30 : 30;
+            const offset = props.isMd ? -30 : 30;
             const sectionTop = section.getBoundingClientRect().top + window.scrollY;
 
             window.scrollTo({
@@ -85,21 +96,21 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
                 behavior: 'smooth',
             });
         }
-        if (isMobileDrawerOpen) {
-            handleDrawerToggle();
+        if (props.isMobileDrawerOpen) {
+            props.handleDrawerToggle();
         }
         setSelectedIndex(index);
     }
 
     return (
         <Drawer
-            anchor={isMd ? 'left' : 'top'}
-            open={isMobileDrawerOpen}
-            variant={isMd ? "permanent" : "temporary"}
+            anchor={props.isMd ? 'left' : 'top'}
+            open={props.isMobileDrawerOpen}
+            variant={props.isMd ? "permanent" : "temporary"}
             sx={{
-                width: isMd ? drawerWidth : 'auto',
+                width: props.isMd ? drawerWidth : 'auto',
                 flexShrink: 0,
-                [`& .MuiDrawer-paper`]: {width: isMd ? drawerWidth : 'auto', boxSizing: 'border-box'},
+                [`& .MuiDrawer-paper`]: {width: props.isMd ? drawerWidth : 'auto', boxSizing: 'border-box'},
             }}
         >
             <Container sx={{
@@ -108,16 +119,11 @@ export default function NavigationDrawer({isMd, isMobileDrawerOpen, handleDrawer
                 // bgcolor: 'background.paper',
                 display: 'flex',
                 flexDirection: 'column',
-                alignItems: isMd ? 'center' : 'start',
+                alignItems: props.isMd ? 'center' : 'start',
                 justifyContent: 'center',
             }}>
                 <Toolbar/>
-                {isMd &&
-                    <AvatarPhoto
-                        width={191}
-                        height={191}
-                        border={'9px solid rgba(255, 255, 255, .4)'}
-                    />}
+                {props.isMd && props.AvatarPhotoComponent}
                 <List sx={{color: 'white', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
                     <CustomListItem
                         index={0}

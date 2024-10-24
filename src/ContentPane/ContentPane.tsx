@@ -7,10 +7,12 @@ import Divider from "@mui/material/Divider";
 import ProjectsPage from "./Pages/ProjectsPage/ProjectsPage.tsx";
 import WorkExpPage from "./Pages/WorkExpPage/WorkExpPage.tsx";
 import PublicationsPage from "./Pages/PublicationsPage/PublicationsPage.tsx";
+import ContentPaneProps from "./ContentPaneProps.tsx";
 
-export default function ContentPane() {
 
-    const PageContainer = ({children, id}) => {
+export default function ContentPane(props: ContentPaneProps) {
+
+    const PageContainer = ({children, id}: { children: React.ReactNode; id: string }) => {
         return (
             <>
                 <section id={id} style={{minHeight: '100vh'}}>
@@ -24,21 +26,34 @@ export default function ContentPane() {
 
     return (
         <Box component="main" sx={{flexGrow: 1, p: 3, width: '100%', mr: {sm: 0, md: 3}}}>
-            <PageContainer id={'about-section'}>
-                <AboutPage/>
-            </PageContainer>
-            <PageContainer id={'workex-section'}>
-                <WorkExpPage/>
-            </PageContainer>
-            <PageContainer id={'education-section'}>
-                <EducationPage/>
-            </PageContainer>
-            <PageContainer id={'projects-section'}>
-                <ProjectsPage/>
-            </PageContainer>
-            <PageContainer id={'publications-section'}>
-                <PublicationsPage/>
-            </PageContainer>
+            {props.aboutSectionData &&
+                <PageContainer id={'about-section'}>
+                    <AboutPage data={props.aboutSectionData}/>
+                </PageContainer>
+            }
+            {props.workSectionData &&
+                <PageContainer id={'workex-section'}>
+                    <WorkExpPage data={props.workSectionData}/>
+                </PageContainer>
+            }
+            {props.educationSectionData &&
+                <PageContainer id={'education-section'}>
+                    <EducationPage data={props.educationSectionData}/>
+                </PageContainer>
+            }
+            {props.projectsSectionData &&
+                <PageContainer id={'projects-section'}>
+                    <ProjectsPage data={props.projectsSectionData}/>
+                </PageContainer>
+            }
+            {props.publicationSectionData &&
+                <PageContainer id={'publications-section'}>
+                    <PublicationsPage
+                        googleScholarLink={props.publicationSectionData.googleScholarProfileLink}
+                        data={props.publicationSectionData.publications}/>
+                </PageContainer>
+            }
+
         </Box>
     );
 }

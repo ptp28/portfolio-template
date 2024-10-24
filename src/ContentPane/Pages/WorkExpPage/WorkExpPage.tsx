@@ -6,55 +6,33 @@ import {Stack} from "@mui/material";
 import CompanyComponent from "./CompanyComponent.tsx";
 
 
-export default function WorkExpPage(props) {
+interface WorkExpPageProps {
+    data: {
+        companyName: string;
+        workDetails: {
+            duration: string,
+            role: string,
+            description: string[]
+        }[];
+    }[];
+}
+
+export default function WorkExpPage(props: WorkExpPageProps) {
     return (
-        <Box sx={{...props.sx}}>
+        <Box>
             <Typography sx={{mb: 5}} color="primary" variant="h3">
                 <BusinessCenterIcon sx={{fontSize: 30}}/> WORK EXPERIENCE
             </Typography>
 
             <Stack direction="column" spacing={5}>
-
-                <CompanyComponent
-                    companyName={"Apple Inc."}
-                    workDescription={
-                        [
-                            {
-                                "title": "Sr. Software Engineer",
-                                "duration": "September 2022 - December 2024",
-                                "description": [
-                                    "This is the <b>first</b> bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
-                                    "This is the second bullet point paragraph. It contains some example text describing a specific topic or idea.",
-                                    "This is the third bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
-                                ],
-                            },
-                            {
-                                "title": "Software Engineer",
-                                "duration": "June 2022 - September 2022",
-                                "description": [
-                                    "This is the only bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
-                                ],
-                            }
-                        ]
-                    }
-                />
-
-                <CompanyComponent
-                    companyName={"NeXT Computers"}
-                    workDescription={
-                        [
-                            {
-                                "title": "Graphical User Interface Designer",
-                                "duration": "September 2020 - June 2022",
-                                "description": [
-                                    "This is the first bullet point paragraph. It contains some example text describing a specific topic or idea.",
-                                    "This is the second bullet point paragraph. It contains some example text describing a specific topic or idea. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod incididunt ut labore et dolore magna aliqua.",
-                                    "This is the third bullet point paragraph. It contains some example text describing a specific topic or idea.",
-                                ],
-                            },
-                        ]
-                    }
-                />
+                {props.data.map((company) => {
+                    return (
+                        <CompanyComponent
+                            companyName={company.companyName}
+                            workDescription={company.workDetails}
+                        />
+                    );
+                })}
             </Stack>
         </Box>
     )

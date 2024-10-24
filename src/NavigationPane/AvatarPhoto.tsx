@@ -1,16 +1,24 @@
 import {Avatar} from "@mui/material";
 
-export default function AvatarPhoto({width, height, border}) {
+interface AvatarPhotoProps {
+    name?: string;
+    src: string;
+    width?: number;
+    height?: number;
+    border?: string;
+}
+
+export default function AvatarPhoto(props: AvatarPhotoProps) {
     return (
         <>
             <Avatar
-                alt="Charlie Brown"
-                src={'avatar.png'}
+                alt={props.name}
+                src={props.src}
                 sx={{
                     m: 2,
-                    width: width,
-                    height: height,
-                    border: border,
+                    width: props.width,
+                    height: props.height,
+                    border: props.border,
                 }}
             />
         </>

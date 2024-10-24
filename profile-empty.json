@@ -1,0 +1,120 @@
+{
+  "About-Page": {
+    "name": "",
+    "email": "",
+    "avatarPath": "",
+    "contactLinks": {
+      "phone": "",
+      "email": "",
+      "linkedin": "",
+      "github": "",
+      "x": "",
+      "facebook": "",
+      "instagram": ""
+    },
+    "text": ""
+  },
+  "Work-Page":
+    [
+      {
+        "companyName": "",
+        "workDetails": [
+          {
+            "duration": "",
+            "role": "",
+            "description": ["", "", ""]
+          },
+          {
+            "duration": "",
+            "role": "",
+            "description": ["", "", ""]
+          }
+        ]
+      },
+      {
+        "companyName": "",
+        "workDetails": [
+          {
+            "duration": "",
+            "role": "",
+            "description": ["", "", ""]
+          }
+        ]
+      }
+    ],
+  "Education-Page": [
+    {
+      "instituteName": "",
+      "degree": "",
+      "duration": "",
+      "description": "",
+      "grade": ""
+    },
+    {
+      "instituteName": "",
+      "degree": "",
+      "duration": "",
+      "description": "",
+      "grade": ""
+    }
+  ],
+  "Projects-Page": [
+    {
+      "projectName": "",
+      "projectTags": "",
+      "description": "",
+      "links": [
+        {
+          "title": "",
+          "url": ""
+        },
+        {
+          "title": "",
+          "url": ""
+        }
+      ]
+    },
+    {
+      "projectName": "",
+      "projectTags": "",
+      "description": ""
+    }
+  ],
+  "Publications-Page": {
+    "googleScholarProfileLink": "",
+    "publications": [
+      {
+        "title": "",
+        "presentedAt": "",
+        "year": "",
+        "description": "",
+        "links": [
+          {
+            "title": "",
+            "url": ""
+          },
+          {
+            "title": "",
+            "url": ""
+          }
+        ]
+      },
+      {
+        "title": "",
+        "presentedAt": "",
+        "year": "",
+        "description": "",
+        "links": [
+          {
+            "title": "",
+            "url": ""
+          },
+          {
+            "title": "",
+            "url": ""
+          }
+        ]
+      }
+    ]
+  }
+}

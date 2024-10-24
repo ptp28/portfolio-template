@@ -1,0 +1,131 @@
+{
+  "About-Page": {
+    "firstName": "CHARLIE",
+    "lastName": "BROWN",
+    "email": "charlie.brown@email.com",
+    "avatarPath": "avatar.png",
+    "contactLinks": {
+      "phone": "9876543210",
+      "email": "charlie.brown@email.com",
+      "linkedin": "https://linkedin.com",
+      "github": "https://github.com",
+      "x": "https://x.com",
+      "facebook": "https://facebook.com",
+      "instagram": "https://instagram.com"
+    },
+    "text": "<span style='color:red'>Lorem ipsum</span> dolor <b>sit amet</b>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+
+  },
+  "Work-Page":
+    [
+      {
+        "companyName": "APPLE INC.",
+        "workDetails": [
+          {
+            "duration": "September 2022 - December 2024",
+            "role": "Sr. Software Development Lead",
+            "description": [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "<b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "<i>Lorem ipsum dolor sit amet</i>, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]
+          },
+          {
+            "duration": "January 2022 - September 2022",
+            "role": "Software Developer",
+            "description": [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            ]
+          }
+        ]
+      },
+      {
+        "companyName": "NeXT COMPUTERS",
+        "workDetails": [
+          {
+            "duration": "July 2020 - January 2022",
+            "role": "User Interface Designer",
+            "description": [
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+              "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            ]
+          }
+        ]
+      }
+    ],
+  "Education-Page": [
+    {
+      "instituteName": "Harvard University",
+      "degree": "Master of Science in Computer Science",
+      "duration": "2018-2020",
+      "description": "Subjects - <br/> <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "grade": "3.8/4"
+    },
+    {
+      "instituteName": "MIT",
+      "degree": "Bachelor of Engineering",
+      "duration": "2014-2018",
+      "description": " Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "grade": "8.3/10"
+    }
+  ],
+  "Projects-Page": [
+    {
+      "projectName": "Nebula Nexus",
+      "projectTags": "#java #sql #spring #docker #tomcat",
+      "description": "<b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "links": [
+        {
+          "title": "Open Nebula Nexus",
+          "url": "https://nexus.com/"
+        },
+        {
+          "title": "Demonstration video",
+          "url": "#"
+        }
+      ]
+    },
+    {
+      "projectName": "Aurora Forge",
+      "projectTags": "#swift #uikit #metal #xcode",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    },
+    {
+      "projectName": "Eclipse Harbor",
+      "projectTags": "#typescript #express.js #node.js #sql",
+      "description": "<u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    }
+  ],
+  "Publications-Page": {
+    "googleScholarProfileLink": "https://google.com",
+    "publications":  [
+      {
+        "title": "Lorem ipsum",
+        "presentedAt": "IEEE",
+        "year": "2020",
+        "description": "<u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "links": [
+          {
+            "title": "Read more at IEEE",
+            "url": "#"
+          }
+        ]
+      },
+      {
+        "title": "Lorem ipsum",
+        "presentedAt": "IEEE",
+        "year": "2019",
+        "description": "<strikethrough>Lorem ipsum</strikethrough> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "links": [
+          {
+            "title": "Read more at IEEE",
+            "url": "https://google.com"
+          },
+          {
+            "title": "Get .pdf copy",
+            "url": "#"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -4,6 +4,7 @@ import NavigationPane from "./NavigationPane/NavigationPane.tsx";
 import ContentPane from "./ContentPane/ContentPane.tsx";
 import {useEffect, useState} from "react";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import userData from '../profile-sample.json';
 
 
 const fontFamilyTitles = 'Saira Extra Condensed, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
@@ -71,7 +72,7 @@ function App() {
 
     useEffect(() => {
         const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        const handleChange = (event) => {
+        const handleChange = (event: MediaQueryListEvent) => {
             setTheme(event.matches ? darkTheme : lightTheme);
         };
         setTheme(mediaQuery.matches ? darkTheme : lightTheme);
@@ -86,7 +87,13 @@ function App() {
             <CssBaseline/>
             <Box sx={{display: 'flex'}}>
                 <NavigationPane/>
-                <ContentPane/>
+                <ContentPane
+                    aboutSectionData={userData["About-Page"]}
+                    workSectionData={userData["Work-Page"]}
+                    educationSectionData={userData["Education-Page"]}
+                    projectsSectionData={userData["Projects-Page"]}
+                    publicationSectionData={userData["Publications-Page"]}
+                />
             </Box>
         </ThemeProvider>
     );

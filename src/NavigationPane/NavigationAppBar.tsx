@@ -1,27 +1,29 @@
 import Toolbar from "@mui/material/Toolbar";
-import AvatarPhoto from "./AvatarPhoto.tsx";
 import Typography from "@mui/material/Typography";
 import {IconButton} from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import * as React from "react";
 
-export default function NavigationAppBar({isMd, handleDrawerToggle}) {
+interface NavigationAppBarProps {
+    AvatarPhotoComponent: React.ReactElement;
+    name: string;
+    isMd: boolean;
+    handleDrawerToggle?: () => void;
+}
+
+export default function NavigationAppBar(props: NavigationAppBarProps) {
     return (
         <AppBar position="fixed" sx={{
             zIndex: (theme) => theme.zIndex.drawer + 1,
-            display: isMd ? 'none' : 'block',
+            display: props.isMd ? 'none' : 'block',
             bgcolor: 'primary.main',
             boxShadow: 'none'
         }}>
             <Toolbar>
-                <AvatarPhoto
-                    width={40}
-                    height={40}
-                    border={''}
-                />
+                {props.AvatarPhotoComponent}
                 <Typography variant="h6" noWrap component="div" sx={{flexGrow: 1}}>
-                    CHARLIE BROWN
+                    {props.name}
                 </Typography>
                 <IconButton
                     size="large"
@@ -29,7 +31,7 @@ export default function NavigationAppBar({isMd, handleDrawerToggle}) {
                     color="inherit"
                     aria-label="menu"
                     sx={{ml: 'auto'}}
-                    onClick={handleDrawerToggle}
+                    onClick={props.handleDrawerToggle}
                 >
                     <MenuIcon/>
                 </IconButton>
