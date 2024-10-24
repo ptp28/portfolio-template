@@ -1,4 +1,7 @@
 {
+  "Theme": {
+    "primaryColor": "#BD5D38"
+  },
   "About-Page": {
     "firstName": "CHARLIE",
     "lastName": "BROWN",
@@ -54,7 +57,7 @@
     ],
   "Education-Page": [
     {
-      "instituteName": "Harvard University",
+      "instituteName": "HARVARD UNIVERSITY",
       "degree": "Master of Science in Computer Science",
       "duration": "2018-2020",
       "description": "Subjects - <br/> <b>Lorem ipsum</b> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -70,7 +73,7 @@
   ],
   "Projects-Page": [
     {
-      "projectName": "Nebula Nexus",
+      "projectName": "NEBULA NEXUS",
       "projectTags": "#java #sql #spring #docker #tomcat",
       "description": "<b>Lorem ipsum dolor</b> sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       "links": [
@@ -85,12 +88,12 @@
       ]
     },
     {
-      "projectName": "Aurora Forge",
+      "projectName": "AURORA FORGE",
       "projectTags": "#swift #uikit #metal #xcode",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     },
     {
-      "projectName": "Eclipse Harbor",
+      "projectName": "ECLIPSE HARBOR",
       "projectTags": "#typescript #express.js #node.js #sql",
       "description": "<u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
     }
@@ -99,7 +102,7 @@
     "googleScholarProfileLink": "https://google.com",
     "publications":  [
       {
-        "title": "Lorem ipsum",
+        "title": "LOREM IPSUM",
         "presentedAt": "IEEE",
         "year": "2020",
         "description": "<u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -111,7 +114,7 @@
         ]
       },
       {
-        "title": "Lorem ipsum",
+        "title": "LOREM IPSUM",
         "presentedAt": "IEEE",
         "year": "2019",
         "description": "<strikethrough>Lorem ipsum</strikethrough> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <u>Lorem ipsum</u> dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",

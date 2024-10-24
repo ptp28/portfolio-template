@@ -18,6 +18,10 @@ interface NavigationDrawerProps {
     isMd: boolean;
     isMobileDrawerOpen: boolean;
     handleDrawerToggle: () => void;
+    displayWork: boolean;
+    displayEducation: boolean;
+    displayProjects: boolean;
+    displayPublications: boolean;
 }
 
 export default function NavigationDrawer(props: NavigationDrawerProps) {
@@ -133,38 +137,46 @@ export default function NavigationDrawer(props: NavigationDrawerProps) {
                             goToSection('about-section', 0)
                         }}
                     />
-                    <CustomListItem
-                        index={1}
-                        title={'WORK EXPERIENCE'}
-                        icon={<BusinessCenterIcon/>}
-                        onClick={() => {
-                            goToSection('workex-section', 1)
-                        }}
-                    />
-                    <CustomListItem
-                        index={2}
-                        title={'EDUCATION'}
-                        icon={<SchoolIcon/>}
-                        onClick={() => {
-                            goToSection('education-section', 2)
-                        }}
-                    />
-                    <CustomListItem
-                        index={3}
-                        title={'PROJECTS'}
-                        icon={<TerminalIcon/>}
-                        onClick={() => {
-                            goToSection('projects-section', 3)
-                        }}
-                    />
-                    <CustomListItem
-                        index={4}
-                        title={'PUBLICATIONS'}
-                        icon={<CollectionsBookmarkIcon/>}
-                        onClick={() => {
-                            goToSection('publications-section', 4)
-                        }}
-                    />
+                    {props.displayWork &&
+                        <CustomListItem
+                            index={1}
+                            title={'WORK EXPERIENCE'}
+                            icon={<BusinessCenterIcon/>}
+                            onClick={() => {
+                                goToSection('workex-section', 1)
+                            }}
+                        />
+                    }
+                    {props.displayEducation &&
+                        <CustomListItem
+                            index={2}
+                            title={'EDUCATION'}
+                            icon={<SchoolIcon/>}
+                            onClick={() => {
+                                goToSection('education-section', 2)
+                            }}
+                        />
+                    }
+                    {props.displayProjects &&
+                        <CustomListItem
+                            index={3}
+                            title={'PROJECTS'}
+                            icon={<TerminalIcon/>}
+                            onClick={() => {
+                                goToSection('projects-section', 3)
+                            }}
+                        />
+                    }
+                    {props.displayPublications &&
+                        <CustomListItem
+                            index={4}
+                            title={'PUBLICATIONS'}
+                            icon={<CollectionsBookmarkIcon/>}
+                            onClick={() => {
+                                goToSection('publications-section', 4)
+                            }}
+                        />
+                    }
                 </List>
             </Container>
         </Drawer>

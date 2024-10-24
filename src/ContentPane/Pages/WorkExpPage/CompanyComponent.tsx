@@ -17,8 +17,8 @@ export default function CompanyComponent(props: CompanyComponentProps) {
 
     return (
         <>
-            <Stack direction="column" spacing={1}>
-                <Typography color="textPrimary" variant="h3">
+            <Stack direction="column">
+                <Typography color="textPrimary" variant="h4" fontWeight={700} fontSize={45}>
                     {props.companyName}
                 </Typography>
                 {

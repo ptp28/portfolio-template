@@ -44,7 +44,7 @@ const lightTheme = createTheme({
     palette: {
         mode: 'light',
         primary: {
-            main: '#BD5D38',
+            main: userData['Theme']['primaryColor'] || '#BD5D38',
         },
         secondary: {
             main: '#2f2f2f',
@@ -58,7 +58,7 @@ const darkTheme = createTheme({
     palette: {
         mode: 'dark',
         primary: {
-            main: '#BD5D38',
+            main: userData['Theme']['primaryColor'] || '#BD5D38',
         },
         secondary: {
             main: '#e2e2e2',
@@ -86,7 +86,13 @@ function App() {
         <ThemeProvider theme={theme}>
             <CssBaseline/>
             <Box sx={{display: 'flex'}}>
-                <NavigationPane/>
+                <NavigationPane name={userData['About-Page']['firstName'] + " " + userData['About-Page']['lastName']}
+                                photoSrc={userData['About-Page']['avatarPath']}
+                                displayEducation={userData['Education-Page'] != undefined}
+                                displayProjects={userData['Projects-Page'] != undefined}
+                                displayWork={userData['Work-Page'] != undefined}
+                                displayPublications={userData['Publications-Page'] != undefined}
+                />
                 <ContentPane
                     aboutSectionData={userData["About-Page"]}
                     workSectionData={userData["Work-Page"]}

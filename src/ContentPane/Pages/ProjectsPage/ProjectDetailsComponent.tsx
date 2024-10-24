@@ -21,7 +21,7 @@ export default function ProjectDetailsComponent(props: ProjectDetailsComponentPr
         <Stack direction="column" spacing={1}>
             <Grid container spacing={0} justifyContent={'space-between'}>
                 <Grid size={{xs: 12, md: 6}} order={1}>
-                    <Typography color="textPrimary" variant="h3">
+                    <Typography color="textPrimary" variant="h4" fontWeight={700} fontSize={45}>
                         {props.projectName}
                     </Typography>
                 </Grid>
